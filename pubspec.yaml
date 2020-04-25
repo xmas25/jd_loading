@@ -1,8 +1,7 @@
 name: jd_loading
-description: A new Flutter package for jd loading.
+description: 京东系APP，Flutter版本统一loading封装,可以直接引入项目使用，也可以自定义Widget传入.
 version: 0.0.1
-author:
-homepage:
+homepage: https://github.com/wei-spring/jd_loading
 
 environment:
   sdk: ">=2.1.0 <3.0.0"

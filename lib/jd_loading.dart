@@ -4,21 +4,24 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum LoadingType {
-  //正常
+  ///正常
   NORMAL,
-  //正常，JD字母
+
+  ///正常，JD字母
   JD,
-  //京东APP loading
+
+  ///京东APP loading
   JD_MALL,
-  //自定义widget
+
+  ///自定义widget
   ME
 }
 
-//是否可见
+///是否可见
 bool _isShowing = false;
 
 class JDLoading {
-  //单例
+  ///单例
   static final JDLoading _singleton = JDLoading._internal();
 
   factory JDLoading() {
@@ -27,21 +30,21 @@ class JDLoading {
 
   JDLoading._internal();
 
-  //全局Context
+  ///全局Context
   static BuildContext appContext;
 
-  //展示类型
+  ///展示类型
   static LoadingType _loadingType = LoadingType.NORMAL;
 
-  //是否点击取消
+  ///是否点击取消
   static bool _loadingDismissible = true;
 
-  //自定义样式
+  ///自定义样式
   static Widget _customBody;
 
   static _LoadingDialog _dialog;
 
-  //初始化
+  ///初始化
   static init(BuildContext context) {
     appContext = context;
   }
@@ -176,7 +179,7 @@ class _LoadingDialogState extends State<_LoadingDialog> {
     switch (JDLoading._loadingType) {
       case LoadingType.NORMAL:
         {
-          //展示正常样式,显示JD字母;
+          ///展示正常样式,显示JD字母;
           return Container(
             width: 66,
             height: 66,
@@ -220,7 +223,7 @@ class _LoadingDialogState extends State<_LoadingDialog> {
         break;
       case LoadingType.JD_MALL:
         {
-          //京东物流APP loading动画;
+          ///京东物流APP loading动画;
           return Container(
             child: Stack(
               alignment: Alignment.center,
@@ -243,7 +246,7 @@ class _LoadingDialogState extends State<_LoadingDialog> {
         break;
       case LoadingType.ME:
         {
-          //自定义 loading动画;
+          ///自定义 loading动画;
           return Container(
             child: Stack(
               alignment: Alignment.center,
@@ -266,7 +269,7 @@ class _LoadingDialogState extends State<_LoadingDialog> {
         break;
       default:
         {
-          //默认展示正常样式,显示JD字母;
+          ///默认展示正常样式,显示JD字母;
           return Container(
             width: 66,
             height: 66,
