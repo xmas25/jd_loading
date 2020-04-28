@@ -46,7 +46,7 @@ class MyTwoApp extends StatelessWidget {
                 onPressed: () {
                   JDLoading.show(
                       type: LoadingType.JD_MALL, isDismissible: false);
-                  Future.delayed(Duration(seconds: 5)).then((onValue) {
+                  Future.delayed(Duration(seconds: 8)).then((onValue) {
                     if (JDLoading.isShowing()) JDLoading.hide();
                   });
                 }),
