@@ -1,3 +1,3 @@
-## [0.0.1] - init project.
+## [0.1.0] - init project.
 
-* 添加基本功能.
+* Add example.

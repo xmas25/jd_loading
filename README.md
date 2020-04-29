@@ -4,7 +4,7 @@
 
 ## 示例预览
 
-<img src="http://storage.jd.com/dqimage/img/demo/loading_preview.png" width = "675" height = "290" alt="" align=center />
+<img src="https://storage.jd.com/dqimage/img/demo/loading_preview.png" width = "675" height = "290" alt="" align=center />
 
 ## 如何使用？
 
@@ -12,7 +12,7 @@
 
  ```dart
 dependencies:
-  jd_loading: ^0.0.1
+  jd_loading: ^0.1.0
   
  ```
 在入口页面初始化：
