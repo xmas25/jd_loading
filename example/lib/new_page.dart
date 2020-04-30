@@ -1,8 +1,37 @@
 import 'package:flutter/material.dart';
 import 'package:jd_loading/jd_loading.dart';
 
-class MyTwoApp extends StatelessWidget {
-  double percentage = 0.0;
+class MyTwoApp extends StatefulWidget {
+  @override
+  _MyTwoAppState createState() => _MyTwoAppState();
+}
+
+class _MyTwoAppState extends State<MyTwoApp> {
+  @override
+  void initState() {
+    super.initState();
+
+    ///_showDialogJust();
+    WidgetsBinding.instance
+        .addPostFrameCallback((_) => _showDialogFrame(context));
+  }
+
+  ///在initState可以这样显示,第一帧
+  _showDialogFrame(BuildContext context) {
+    JDLoading.show(isDismissible: false);
+    Future.delayed(Duration(seconds: 5)).then((onValue) {
+      if (JDLoading.isShowing()) JDLoading.hide();
+    });
+  }
+
+  ///在initState可以这样显示,延迟
+  _showDialogJust() async {
+    await Future.delayed(Duration(milliseconds: 1));
+    JDLoading.show(isDismissible: false);
+    Future.delayed(Duration(seconds: 5)).then((onValue) {
+      if (JDLoading.isShowing()) JDLoading.hide();
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

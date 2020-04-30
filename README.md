@@ -10,14 +10,14 @@
 
 依赖library：
 
- ```dart
+```dart
 dependencies:
-  jd_loading: ^0.1.0
+  jd_loading: ^0.1.1
   
- ```
+```
 在入口页面初始化：
 
- ```dart
+```dart
 class MyApp extends StatelessWidget {
   double percentage = 0.0;
 
@@ -30,12 +30,27 @@ class MyApp extends StatelessWidget {
     );
   }
 }
- ```
+```
 
 在任意页面调用，展示loading：
 
- ```dart
- JDLoading.show();
+```dart
+JDLoading.show();
   
  ```
- 更多使用，参见example.
+如果需要initState展示，则需要等页面渲染完，再调用，比如监听页面帧是否渲染完毕等
+
+```dart
+WidgetsBinding.instance
+       .addPostFrameCallback((_) => _showDialogFrame(context));
+  
+```
+
+如果不显示，需要重新传入BuildContext,(测试遇见使用FlutterBoost时候，需要重新传入context)
+
+```dart
+JDLoading.loading(context);
+  
+```
+
+更多使用，参见example.

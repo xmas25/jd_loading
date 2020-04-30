@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
                 ),
                 color: Colors.deepOrange,
                 onPressed: () {
-                  JDLoading.show(isDismissible: true);
+                  JDLoading.loading(context);
                   Future.delayed(Duration(seconds: 5)).then((onValue) {
                     if (JDLoading.isShowing()) JDLoading.hide();
                   });

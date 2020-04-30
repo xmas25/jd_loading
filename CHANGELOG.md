@@ -1,3 +1,4 @@
-## [0.1.0] - init project.
+## [0.1.1] - init project.
 
-* Add example.
+* 😁Complete example.
+* 😢Bug fix.

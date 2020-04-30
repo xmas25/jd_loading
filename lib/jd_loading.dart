@@ -61,11 +61,22 @@ class JDLoading {
     return _isShowing;
   }
 
+  static Future<bool> loading(BuildContext context,
+      {LoadingType type, bool isDismissible, Widget customBody}) async {
+    appContext = context;
+    return show(
+        type: type, isDismissible: isDismissible, customBody: customBody);
+  }
+
   static Future<bool> show(
       {LoadingType type, bool isDismissible, Widget customBody}) async {
     _loadingType = type;
     _loadingDismissible = isDismissible ?? true;
     _customBody = customBody ?? null;
+    if (appContext == null) {
+      debugPrint('Error!!! please init JDLoading before show.');
+      return false;
+    }
     try {
       if (!_isShowing) {
         _dialog = new _LoadingDialog();
