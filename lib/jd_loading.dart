@@ -93,7 +93,7 @@ class JDLoading {
                     height: 166,
                     child: Dialog(
                         backgroundColor: Colors.transparent,
-                        insetAnimationDuration: Duration(milliseconds: 100),
+                        insetAnimationDuration: Duration(milliseconds: 10),
                         child: _dialog),
                   ),
                 ),
@@ -114,7 +114,6 @@ class JDLoading {
             }
           },
         );
-        await Future.delayed(Duration(milliseconds: 200));
         _isShowing = true;
         return true;
       } else {
@@ -208,7 +207,7 @@ class _LoadingDialogState extends State<_LoadingDialog> {
                       height: 33,
                       child: CircularProgressIndicator(
                         backgroundColor: Color.fromARGB(255, 217, 217, 217),
-                        strokeWidth: 3,
+                        strokeWidth: 2,
                         valueColor: AlwaysStoppedAnimation(
                             Color.fromARGB(255, 167, 167, 167)),
                       ),
@@ -298,7 +297,7 @@ class _LoadingDialogState extends State<_LoadingDialog> {
                       height: 33,
                       child: CircularProgressIndicator(
                         backgroundColor: Color.fromARGB(255, 217, 217, 217),
-                        strokeWidth: 3,
+                        strokeWidth: 2,
                         valueColor: AlwaysStoppedAnimation(
                             Color.fromARGB(255, 167, 167, 167)),
                       ),
