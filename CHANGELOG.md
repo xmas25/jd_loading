@@ -1,3 +1,3 @@
-## [0.1.2] - init project.
+## [0.1.3] - edit license project.
 
 * 😢Bug fix.
