@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum LoadingType {
-  ///正常
+  ///正常圆圈
   NORMAL,
 
-  ///正常，JD字母
+  ///JD字母
   JD,
 
   ///京东APP loading
@@ -84,34 +84,18 @@ class JDLoading {
           context: JDLoading.appContext,
           barrierDismissible: _loadingDismissible,
           builder: (BuildContext context) {
-            if (_loadingDismissible) {
-              return WillPopScope(
-                onWillPop: () async => _loadingDismissible,
-                child: Center(
-                  child: SizedBox(
-                    width: 166,
-                    height: 166,
-                    child: Dialog(
-                        backgroundColor: Colors.transparent,
-                        insetAnimationDuration: Duration(milliseconds: 10),
-                        child: _dialog),
+            return Directionality(
+              child: Overlay(
+                initialEntries: [
+                  OverlayEntry(
+                    builder: (BuildContext _context) {
+                      return _dialog;
+                    },
                   ),
-                ),
-              );
-            } else {
-              return Directionality(
-                child: Overlay(
-                  initialEntries: [
-                    OverlayEntry(
-                      builder: (BuildContext _context) {
-                        return _dialog;
-                      },
-                    ),
-                  ],
-                ),
-                textDirection: TextDirection.ltr,
-              );
-            }
+                ],
+              ),
+              textDirection: TextDirection.ltr,
+            );
           },
         );
         _isShowing = true;

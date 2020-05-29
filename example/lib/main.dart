@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
                   'Show⭕️Loading',
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Colors.deepOrange,
+                color: Colors.deepOrangeAccent,
                 onPressed: () {
                   JDLoading.loading(context);
                   Future.delayed(Duration(seconds: 5)).then((onValue) {
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
                   'Test New BuildContext)',
                   style: TextStyle(color: Colors.white),
                 ),
-                color: Colors.deepOrange,
+                color: Colors.deepOrangeAccent,
                 onPressed: () {
                   Navigator.push(
                     context,

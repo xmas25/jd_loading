@@ -12,7 +12,7 @@
 
 ```dart
 dependencies:
-  jd_loading: ^0.1.2
+  jd_loading: ^0.1.4
   
 ```
 在入口页面初始化：

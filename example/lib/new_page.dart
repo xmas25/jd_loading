@@ -12,14 +12,13 @@ class _MyTwoAppState extends State<MyTwoApp> {
     super.initState();
 
     ///_showDialogJust();
-    WidgetsBinding.instance
-        .addPostFrameCallback((_) => _showDialogFrame(context));
+    WidgetsBinding.instance.addPostFrameCallback((_) => _showDialogFrame());
   }
 
   ///在initState可以这样显示,第一帧
-  _showDialogFrame(BuildContext context) {
+  _showDialogFrame() {
     JDLoading.show(isDismissible: false);
-    Future.delayed(Duration(seconds: 5)).then((onValue) {
+    Future.delayed(Duration(seconds: 3)).then((onValue) {
       if (JDLoading.isShowing()) JDLoading.hide();
     });
   }
@@ -48,7 +47,7 @@ class _MyTwoAppState extends State<MyTwoApp> {
                 ),
                 color: Colors.deepOrange,
                 onPressed: () {
-                  JDLoading.show(isDismissible: false);
+                  JDLoading.show(isDismissible: true);
                   Future.delayed(Duration(seconds: 5)).then((onValue) {
                     if (JDLoading.isShowing()) JDLoading.hide();
                   });
@@ -60,8 +59,7 @@ class _MyTwoAppState extends State<MyTwoApp> {
                 ),
                 color: Colors.deepOrange,
                 onPressed: () {
-                  JDLoading.show(
-                      type: LoadingType.NORMAL, isDismissible: false);
+                  JDLoading.show(type: LoadingType.NORMAL, isDismissible: true);
                   Future.delayed(Duration(seconds: 5)).then((onValue) {
                     if (JDLoading.isShowing()) JDLoading.hide();
                   });
