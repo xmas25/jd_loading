@@ -115,7 +115,7 @@ class JDLoading {
     try {
       if (_isShowing) {
         _isShowing = false;
-        Navigator.of(JDLoading.appContext).pop();
+        Navigator.of(JDLoading.appContext).maybePop();
         return Future.value(true);
       } else {
         return Future.value(false);
