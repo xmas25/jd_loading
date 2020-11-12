@@ -1,12 +1,11 @@
 name: jd_loading
 description: 全局Loading封装
 version: 0.1.6
-homepage: https://git.jd.com/xtl_flutter/jd_loading
-publish_to: http://pub.jd.com
-author: weichunsheng
-email: weichunsheng@jd.com
-department: 基础研发部
-git: https://git.jd.com/xtl_flutter/jd_loading
+homepage: https://github.com/wei-spring/jd_loading
+publish_to: https://pub.flutter-io.cn/
+email: weichunsheng3611@gmail.com
+department: 全局Loading
+git: https://github.com/wei-spring/jd_loading
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
