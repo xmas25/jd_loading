@@ -1,7 +1,12 @@
 name: jd_loading
-description: For The Jingdong APP, Flutter version unified loading package, can be directly introduced into the project to use, or can be imported by custom Widget,just use it now.
-version: 0.1.5
-homepage: https://github.com/wei-spring/jd_loading
+description: 全局Loading封装
+version: 0.1.6
+homepage: https://git.jd.com/xtl_flutter/jd_loading
+publish_to: http://pub.jd.com
+author: weichunsheng
+email: weichunsheng@jd.com
+department: 基础研发部
+git: https://git.jd.com/xtl_flutter/jd_loading
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
@@ -9,6 +14,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  lottie: ^0.4.0
 
 dev_dependencies:
   flutter_test:

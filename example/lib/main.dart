@@ -30,14 +30,19 @@ class MyApp extends StatelessWidget {
                 ),
                 color: Colors.deepOrangeAccent,
                 onPressed: () {
-                  JDLoading.loading(context);
-                  Future.delayed(Duration(seconds: 5)).then((onValue) {
-                    if (JDLoading.isShowing()) JDLoading.hide();
+                  JDLoading.loading(context, isDismissible: true).then((value) {
+                    print('aaa show loading callback');
+                  });
+                  Future.delayed(Duration(seconds: 3)).then((onValue) {
+                    if (JDLoading.isShowing())
+                      JDLoading.hide().then((status) {
+                        print('aaa hide loading callback');
+                      });
                   });
                 }),
             RaisedButton(
                 child: Text(
-                  'Test New BuildContext)',
+                  'Test New BuildContext',
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.deepOrangeAccent,
@@ -46,6 +51,28 @@ class MyApp extends StatelessWidget {
                     context,
                     MaterialPageRoute(builder: (context) => MyTwoApp()),
                   );
+                }),
+            RaisedButton(
+                child: Text(
+                  'Test hide',
+                  style: TextStyle(color: Colors.white),
+                ),
+                color: Colors.deepOrangeAccent,
+                onPressed: () {
+                  showDialog(
+                      context: context,
+                      builder: (_) => new AlertDialog(
+                            title: new Text("Material Dialog"),
+                            content: new Text("Hey! I'm a Test!"),
+                            actions: <Widget>[
+                              FlatButton(
+                                child: Text('Close me!'),
+                                onPressed: () {
+                                  Navigator.of(context).pop();
+                                },
+                              )
+                            ],
+                          ));
                 })
           ],
         ),

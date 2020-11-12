@@ -17,10 +17,12 @@ class _MyTwoAppState extends State<MyTwoApp> {
 
   ///在initState可以这样显示,第一帧
   _showDialogFrame() {
-    JDLoading.show(isDismissible: false);
-    Future.delayed(Duration(seconds: 3)).then((onValue) {
-      if (JDLoading.isShowing()) JDLoading.hide();
-    });
+    JDLoading.show(isDismissible: true);
+    //测试连续显示Loading
+//    JDLoading.loading(context);
+//    Future.delayed(Duration(seconds: 3)).then((onValue) {
+//      if (JDLoading.isShowing()) JDLoading.hide();
+//    });
   }
 
   ///在initState可以这样显示,延迟
@@ -42,19 +44,19 @@ class _MyTwoAppState extends State<MyTwoApp> {
           children: <Widget>[
             RaisedButton(
                 child: Text(
-                  '默认⭕️Loading',
+                  'JD字母️Loading',
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.deepOrange,
                 onPressed: () {
-                  JDLoading.show(isDismissible: true);
+                  JDLoading.show(type: LoadingType.JD, isDismissible: true);
                   Future.delayed(Duration(seconds: 5)).then((onValue) {
                     if (JDLoading.isShowing()) JDLoading.hide();
                   });
                 }),
             RaisedButton(
                 child: Text(
-                  'JD字母Loading',
+                  '圆圈Loading',
                   style: TextStyle(color: Colors.white),
                 ),
                 color: Colors.deepOrange,
@@ -72,10 +74,10 @@ class _MyTwoAppState extends State<MyTwoApp> {
                 color: Colors.deepOrange,
                 onPressed: () {
                   JDLoading.show(
-                      type: LoadingType.JD_MALL, isDismissible: false);
-                  Future.delayed(Duration(seconds: 8)).then((onValue) {
-                    if (JDLoading.isShowing()) JDLoading.hide();
-                  });
+                      type: LoadingType.JD_MALL, isDismissible: true);
+//                  Future.delayed(Duration(seconds: 8)).then((onValue) {
+//                    if (JDLoading.isShowing()) JDLoading.hide();
+//                  });
                 }),
             RaisedButton(
                 child: Text(
@@ -85,7 +87,9 @@ class _MyTwoAppState extends State<MyTwoApp> {
                 color: Colors.deepOrange,
                 onPressed: () {
                   JDLoading.show(
-                      customBody: _progressJdLoading, isDismissible: false);
+                      type: LoadingType.ME,
+                      customBody: _progressJdLoading,
+                      isDismissible: false);
                   Future.delayed(Duration(seconds: 5)).then((onValue) {
                     if (JDLoading.isShowing()) JDLoading.hide();
                   });
